@@ -1,50 +1,162 @@
-# Welcome to your Expo app 👋
+# Proje Danışmanı Uygulaması 📱
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+![Proje Danışmanı Logo](https://img.icons8.com/color/96/000000/project-management.png)
 
-## Get started
+## 📋 Proje Hakkında
 
-1. Install dependencies
+Proje Danışmanı, proje geliştirmeye yeni başlayanlar için tasarlanmış bir mobil uygulamadır. Bu uygulama, Expo Go platformunda çalışır ve kullanıcıların proje fikirlerini değerlendirmelerine, yapay zeka yardımıyla adım adım rehberlik almalarına olanak tanır.
 
+### 🌟 Temel Özellikler
+
+- **Proje Fikri Girişi**: Kullanıcılar proje fikirlerini detaylı bir şekilde açıklayabilir
+- **Seviye Belirleme**: Kullanıcılar kendi programlama/geliştirme seviyelerini seçebilir (Başlangıç, Orta, İleri)
+- **Yapay Zeka Değerlendirmesi**: Google Gemini 2.0 Flash yapay zeka modeli kullanılarak projenin değerlendirmesi yapılır
+- **Görev Listesi**: Projeyi tamamlamak için adım adım yapılması gereken görevlerin listesi sunulur
+- **İlerleme Takibi**: Kullanıcılar görevleri tamamladıkça işaretleyebilir ve ilerlemelerini takip edebilir
+- **Akış Diyagramı**: Projenin yapısal akışını gösteren bir açıklama sunulur
+
+## 💻 Teknolojiler
+
+Bu uygulama aşağıdaki teknolojiler kullanılarak geliştirilmiştir:
+
+- **React Native**: Çapraz platform mobil uygulama geliştirme
+- **Expo**: Kolay geliştirme ve dağıtım için React Native framework'ü
+- **Google Gemini AI**: Proje değerlendirmesi ve görev listesi oluşturma için yapay zeka API'si
+- **AsyncStorage**: Yerel veri depolama için
+- **React Navigation**: Ekranlar arası geçiş için
+
+## 🚀 Kurulum ve Çalıştırma
+
+### Gereksinimler
+
+- Node.js (14.0 veya üstü)
+- npm veya yarn
+- Expo CLI
+- Expo Go (mobil cihazınızda test etmek için)
+
+### Adımlar
+
+1. Projeyi klonlayın:
+   ```bash
+   git clone https://github.com/Busrapehlivan/Project-advisor-application-react.git
+   cd Project-advisor-application-react
+   ```
+
+2. Bağımlılıkları yükleyin:
    ```bash
    npm install
+   # veya
+   yarn install
    ```
 
-2. Start the app
-
+3. Uygulamayı başlatın:
    ```bash
-    npx expo start
+   npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+4. Mobil cihazınızda test etmek için:
+   - Expo Go uygulamasını mobil cihazınıza indirin
+   - QR kodunu Expo Go uygulaması ile tarayın (Android) veya Kamera uygulaması ile tarayın (iOS)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+5. Eğer bağlantı sorunları yaşıyorsanız, tünel bağlantısı kullanın:
+   ```bash
+   npx expo start --tunnel
+   ```
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 📱 Kullanım Kılavuzu
 
-## Get a fresh project
+### Proje Fikri Girişi
 
-When you're ready, run:
+1. Uygulamayı açın
+2. "Proje Fikriniz" alanına projenizi detaylı bir şekilde tanımlayan bir açıklama yazın
+3. "Seviyeniz" bölümünden kendi bilgi/deneyim seviyenizi seçin (Başlangıç, Orta, İleri)
+4. "Değerlendirmeyi Başlat" butonuna tıklayın ve yapay zeka modelinin projenizi değerlendirmesini bekleyin
 
-```bash
-npm run reset-project
+### Sonuçları İnceleme
+
+1. **Değerlendirme**: Proje fikrinizin uygulanabilirlik, zorluk seviyesi ve potansiyel değerini gösteren kapsamlı bir analiz
+2. **Öneriler**: Projenizi daha iyi hale getirmek için sunulan tavsiyeler
+3. **Görevler**: Projeyi gerçekleştirmek için adım adım yapılması gereken görevler listesi
+   - Görevleri tamamladıkça üzerine tıklayarak işaretleyebilirsiniz
+   - İlerleme durumunuzu yüzde olarak takip edebilirsiniz
+4. **Akış Diyagramı**: Projenizin genel yapısını ve iş akışını gösteren açıklama
+
+### Projeler Listesi
+
+- Ana ekranda, daha önce değerlendirdiğiniz projeleri "Projelerim" butonuna tıklayarak görüntüleyebilirsiniz
+- Her projenin ilerleme durumunu görebilir ve üzerine tıklayarak detaylarına erişebilirsiniz
+
+## 🧩 Proje Yapısı
+
+```
+ProjectAdvisorApp/
+├── src/
+│   ├── components/       # Yeniden kullanılabilir UI bileşenleri
+│   ├── screens/          # Uygulama ekranları
+│   │   ├── HomeScreen.js       # Ana giriş ekranı
+│   │   ├── ResultsScreen.js    # Sonuç görüntüleme ekranı
+│   │   └── ProjectsListScreen.js # Projeler listesi ekranı
+│   ├── services/         # API ve veri yönetimi
+│   │   ├── geminiService.js    # Gemini API entegrasyonu
+│   │   └── storageService.js   # Yerel depolama yönetimi
+│   └── navigation/       # Ekranlar arası geçiş
+│       └── AppNavigator.js     # Navigasyon yapılandırması
+├── App.js                # Ana uygulama bileşeni
+├── package.json          # Bağımlılıklar ve scripts
+└── README.md             # Proje dokümantasyonu
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🧠 API Kullanımı
 
-## Learn more
+Uygulama, Google Gemini 2.0 Flash modelini kullanarak proje değerlendirmesi yapar:
 
-To learn more about developing your project with Expo, look at the following resources:
+```javascript
+const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+// API isteği örneği
+const response = await fetch(`${API_URL}?key=${API_KEY}`, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    contents: [{
+      parts: [{
+        text: "Proje değerlendirme isteği..."
+      }]
+    }]
+  }),
+});
+```
 
-## Join the community
+## 🔮 Gelecek Geliştirmeler
 
-Join our community of developers creating universal apps.
+- Daha detaylı proje kategorileri ve şablonlar
+- Kullanıcı hesapları ve bulut senkronizasyonu
+- Proje iş birliği ve paylaşım özellikleri
+- Detaylı zaman çizelgesi ve hatırlatıcılar
+- Kaynak önerileri ve öğrenme materyalleri
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 🔧 Sorun Giderme
+
+- **Expo Go Bağlantı Sorunları**: Eğer QR kodu taradığınızda "Something went wrong" hatası alıyorsanız, `expo start --tunnel` komutunu kullanarak tünel bağlantısı kurun
+- **API Yanıt Hataları**: Eğer API yanıtlarında sorun yaşıyorsanız, daha kısa ve net proje açıklamaları girmeyi deneyin
+- **Uygulama Yükleme Sorunları**: Bağımlılıkları güncellemek için `npm install` komutunu çalıştırın
+
+## 👥 Katkıda Bulunma
+
+1. Bu repo'yu fork edin
+2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
+3. Değişikliklerinizi commit edin (`git commit -m 'Harika özellik eklendi'`)
+4. Branch'inize push edin (`git push origin feature/amazing-feature`)
+5. Pull Request oluşturun
+
+## 📄 Lisans
+
+Bu proje MIT lisansı altında lisanslanmıştır.
+
+## 📞 İletişim
+
+Büşra Pehlivan - [GitHub](https://github.com/Busrapehlivan)
+
+Proje Linki: [https://github.com/Busrapehlivan/Project-advisor-application-react](https://github.com/Busrapehlivan/Project-advisor-application-react)
