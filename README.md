@@ -81,10 +81,7 @@ Bu uygulama aşağıdaki teknolojiler kullanılarak geliştirilmiştir:
    - İlerleme durumunuzu yüzde olarak takip edebilirsiniz
 4. **Akış Diyagramı**: Projenizin genel yapısını ve iş akışını gösteren açıklama
 
-### Projeler Listesi
 
-- Ana ekranda, daha önce değerlendirdiğiniz projeleri "Projelerim" butonuna tıklayarak görüntüleyebilirsiniz
-- Her projenin ilerleme durumunu görebilir ve üzerine tıklayarak detaylarına erişebilirsiniz
 
 ## 🧩 Proje Yapısı
 
@@ -106,28 +103,7 @@ ProjectAdvisorApp/
 └── README.md             # Proje dokümantasyonu
 ```
 
-## 🧠 API Kullanımı
 
-Uygulama, Google Gemini 2.0 Flash modelini kullanarak proje değerlendirmesi yapar:
-
-```javascript
-const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
-
-// API isteği örneği
-const response = await fetch(`${API_URL}?key=${API_KEY}`, {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({
-    contents: [{
-      parts: [{
-        text: "Proje değerlendirme isteği..."
-      }]
-    }]
-  }),
-});
-```
 
 ## 🔮 Gelecek Geliştirmeler
 
@@ -137,26 +113,4 @@ const response = await fetch(`${API_URL}?key=${API_KEY}`, {
 - Detaylı zaman çizelgesi ve hatırlatıcılar
 - Kaynak önerileri ve öğrenme materyalleri
 
-## 🔧 Sorun Giderme
 
-- **Expo Go Bağlantı Sorunları**: Eğer QR kodu taradığınızda "Something went wrong" hatası alıyorsanız, `expo start --tunnel` komutunu kullanarak tünel bağlantısı kurun
-- **API Yanıt Hataları**: Eğer API yanıtlarında sorun yaşıyorsanız, daha kısa ve net proje açıklamaları girmeyi deneyin
-- **Uygulama Yükleme Sorunları**: Bağımlılıkları güncellemek için `npm install` komutunu çalıştırın
-
-## 👥 Katkıda Bulunma
-
-1. Bu repo'yu fork edin
-2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
-3. Değişikliklerinizi commit edin (`git commit -m 'Harika özellik eklendi'`)
-4. Branch'inize push edin (`git push origin feature/amazing-feature`)
-5. Pull Request oluşturun
-
-## 📄 Lisans
-
-Bu proje MIT lisansı altında lisanslanmıştır.
-
-## 📞 İletişim
-
-Büşra Pehlivan - [GitHub](https://github.com/Busrapehlivan)
-
-Proje Linki: [https://github.com/Busrapehlivan/Project-advisor-application-react](https://github.com/Busrapehlivan/Project-advisor-application-react)
