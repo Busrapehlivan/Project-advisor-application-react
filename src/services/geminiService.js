@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = 'AIzaSyD-uVPnLPBCqgXyrdkfCkqAJ3MldJCpsho';
+const API_KEY = '';
 const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
 
 export const evaluateProjectIdea = async (projectIdea, skillLevel) => {
